@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serviços | Rebird Marketing Digital</title>
+  <meta name="description" content="Gestão de redes, tráfego pago, branding, conteúdo, site e consultoria para empresas locais.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { red: { 500:'#e21023', 400:'#e8394a' } } } } }
+  </script>
+  <style>
+    @font-face { font-family:'Forrest Gallery'; src:url('fonts/ForrestGallery-Regular.woff2') format('woff2'); font-weight:400; font-display:swap; }
+    @font-face { font-family:'Universo'; src:url('fonts/Universo-Regular.woff2') format('woff2'); font-weight:400; font-display:swap; }
+    @font-face { font-family:'Archia'; src:url('fonts/Archia-Regular.woff2') format('woff2'); font-weight:400; font-display:swap; }
+    *,*::before,*::after{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{font-family:'Archia','Inter',system-ui,sans-serif;background:#000;color:#e8e8e8;overflow-x:hidden}
+    h1,h2,h3,h4,h5{font-family:'Universo','Sora',system-ui,sans-serif}
+    .brand-name{font-family:'Forrest Gallery','Sora',system-ui,sans-serif;letter-spacing:0.08em}
+    .grid-bg{background-image:linear-gradient(rgba(226,16,35,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(226,16,35,0.06) 1px,transparent 1px);background-size:48px 48px}
+    .glow-red{text-shadow:0 0 24px rgba(226,16,35,0.7),0 0 48px rgba(226,16,35,0.3)}
+    .glow-card{border:1px solid rgba(226,16,35,0.15);transition:border-color 0.3s,box-shadow 0.3s,transform 0.3s}
+    .glow-card:hover{border-color:rgba(226,16,35,0.5);box-shadow:0 0 24px rgba(226,16,35,0.18);transform:translateY(-4px)}
+    .glow-btn{background:#e21023;color:#fff;box-shadow:0 0 20px rgba(226,16,35,0.5),0 4px 16px rgba(226,16,35,0.3);transition:box-shadow 0.2s,transform 0.2s,background 0.2s}
+    .glow-btn:hover{background:#e8394a;box-shadow:0 0 36px rgba(226,16,35,0.7);transform:translateY(-2px)}
+    .btn-outline-red{border:1.5px solid rgba(226,16,35,0.5);color:#e21023;transition:border-color 0.2s,background 0.2s}
+    .btn-outline-red:hover{border-color:#e21023;background:rgba(226,16,35,0.08)}
+    .tag-red{background:rgba(226,16,35,0.15);color:#e8394a;border:1px solid rgba(226,16,35,0.3)}
+    #navbar{transition:background 0.3s,box-shadow 0.3s}
+    #navbar.scrolled{background:rgba(0,0,0,0.95)!important;backdrop-filter:blur(16px);box-shadow:0 1px 0 rgba(226,16,35,0.2);border-bottom:1px solid rgba(226,16,35,0.15)}
+    #mobile-menu{transform:translateX(100%);transition:transform 0.3s ease}
+    #mobile-menu.open{transform:translateX(0)}
+    .fade-up{opacity:0;transform:translateY(32px);transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1),transform 0.7s cubic-bezier(0.16,1,0.3,1)}
+    .fade-up.visible{opacity:1;transform:translateY(0)}
+    .delay-1{transition-delay:0.1s} .delay-2{transition-delay:0.2s} .delay-3{transition-delay:0.3s} .delay-4{transition-delay:0.4s}
+    .red-line{width:48px;height:3px;background:#e21023;box-shadow:0 0 12px rgba(226,16,35,0.6)}
+    ::-webkit-scrollbar{width:4px} ::-webkit-scrollbar-track{background:#000} ::-webkit-scrollbar-thumb{background:#e21023;border-radius:2px}
+    #whatsapp-btn{transition:transform 0.2s,box-shadow 0.2s}
+    #whatsapp-btn:hover{transform:scale(1.08);box-shadow:0 12px 32px rgba(37,211,102,0.45)}
+    .deliverable-item{position:relative;padding-left:1.25rem}
+    .deliverable-item::before{content:'→';position:absolute;left:0;color:#e21023;font-weight:700}
+  </style>
+</head>
+<body style="background:#000">
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-transparent">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+      <div class="flex items-center justify-between" style="height:72px">
+        <a href="index.html" aria-label="Rebird - Página inicial">
+          <img src="logos/rebird-logo.png" alt="Rebird Marketing Digital" style="height:44px;width:auto;object-fit:contain;">
+        </a>
+        <div class="hidden lg:flex items-center gap-8">
+          <a href="como-trabalhamos.html" class="text-white/60 hover:text-white text-sm transition-colors tracking-wide">Como Trabalhamos</a>
+          <a href="servicos.html" class="text-white text-sm tracking-wide border-b border-red-500 pb-0.5">Serviços</a>
+          <a href="index.html#resultados" class="text-white/60 hover:text-white text-sm transition-colors tracking-wide">Resultados</a>
+          <a href="contato.html" class="glow-btn px-5 py-2.5 rounded-lg text-sm font-medium tracking-wide">Diagnóstico Gratuito</a>
+        </div>
+        <button id="menu-btn" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Abrir menu">
+          <span class="block w-6 h-0.5 bg-white"></span>
+          <span class="block w-6 h-0.5 bg-white"></span>
+          <span class="block w-5 h-0.5 bg-white"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="fixed top-0 right-0 bottom-0 w-72 bg-black border-l border-red-700/30 z-50 shadow-2xl flex flex-col p-8">
+      <div class="flex justify-between items-center mb-10">
+        <img src="logos/rebird-logo.png" alt="Rebird" style="height:40px;width:auto;object-fit:contain;">
+        <button id="close-menu" class="text-white/50 hover:text-red-500 transition-colors"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
+      </div>
+      <nav class="flex flex-col gap-6">
+        <a href="como-trabalhamos.html" class="text-white/70 text-lg hover:text-red-500 transition-colors">Como Trabalhamos</a>
+        <a href="servicos.html" class="text-white text-lg">Serviços</a>
+        <a href="index.html#resultados" class="text-white/70 text-lg hover:text-red-500 transition-colors">Resultados</a>
+      </nav>
+      <div class="mt-auto"><a href="contato.html" class="glow-btn block text-center px-6 py-4 rounded-xl font-medium text-base">Diagnóstico Gratuito</a></div>
+    </div>
+    <div id="menu-overlay" class="hidden fixed inset-0 bg-black/60 z-40 backdrop-blur-sm"></div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="pt-32 pb-20 relative grid-bg" style="background:#000">
+    <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse at 60% 0%,rgba(226,16,35,0.12) 0%,transparent 60%)"></div>
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 text-center relative z-10">
+      <div class="fade-up inline-flex items-center gap-2 tag-red px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-6">
+        O que fazemos
+      </div>
+      <h1 class="fade-up delay-1 text-white leading-tight mb-4" style="font-size:clamp(2.2rem, 5vw, 3.5rem)">
+        O que a Rebird faz<br>pela sua empresa.
+      </h1>
+      <p class="fade-up delay-2 text-white/50 text-lg max-w-xl mx-auto">
+        Marketing full service para empresas locais que querem crescer com consistência — não depender de sorte ou viral.
+      </p>
+    </div>
+  </section>
+
+  <main>
+    <!-- SERVIÇO 1 — REDES SOCIAIS -->
+    <section class="py-20 lg:py-28" style="background:#000">
+      <div class="max-w-7xl mx-auto px-5 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div>
+            <div class="fade-up inline-flex items-center gap-2 tag-red px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase mb-5">
+              Redes Sociais
+            </div>
+            <h2 class="fade-up delay-1 text-white leading-tight mb-5" style="font-size:clamp(1.75rem, 3vw, 2.5rem)">
+              Presença constante.<br>Mensagem certa. Público certo.
+            </h2>
+            <p class="fade-up delay-2 text-white/60 leading-relaxed mb-6">
+              Redes sociais sem estratégia são ruído. Com estratégia, são o canal mais poderoso para construir autoridade e relacionamento com seu mercado.
+            </p>
+            <p class="fade-up delay-2 text-white/60 leading-relaxed mb-8">
+              A Rebird não entrega post — entrega posicionamento. Cada publicação tem intenção: mostrar quem você é, por que você é referência e por que vale a pena te escolher.
+            </p>
+            <div class="fade-up delay-3 mb-8">
+              <h4 class="text-white/40 text-xs tracking-widest uppercase mb-4">O que entregamos</h4>
+              <ul class="space-y-2.5">
+                <li class="deliverable-item text-white/60 text-sm">Planejamento mensal de conteúdo</li>
+                <li class="deliverable-item text-white/60 text-sm">Criação de arte e copy para feed e stories</li>
+                <li class="deliverable-item text-white/60 text-sm">Calendário editorial alinhado à estratégia da marca</li>
+                <li class="deliverable-item text-white/60 text-sm">Relatório mensal com análise e ajustes</li>
+              </ul>
+            </div>
+            <div class="fade-up delay-3 bg-white/[0.04] rounded-xl px-5 py-4 border-l-4 border-red-500 mb-8">
+              <p class="text-sm text-white/60"><strong class="text-white">Para quem é:</strong> Empresas locais que querem aparecer com consistência, construir autoridade no mercado e parar de improvisar nas redes.</p>
+            </div>
+            <a href="contato.html" class="fade-up delay-4 glow-btn inline-block px-7 py-3.5 rounded-xl text-sm font-medium">
+              Quero esse serviço →
+            </a>
+          </div>
+          <div class="fade-up delay-2">
+            <div class="bg-white/[0.03] border border-white/[0.06] rounded-3xl aspect-square flex items-center justify-center">
+              <div class="text-center p-10">
+                <div class="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6" style="background:rgba(226,16,35,0.12)">
+                  <svg class="w-10 h-10 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 4V2a1 1 0 012 0v2M17 4V2a1 1 0 012 0v2M3 8h18M5 8v12a2 2 0 002 2h10a2 2 0 002-2V8"/></svg>
+                </div>
+                <div class="text-white text-3xl font-bold mb-2">+340%</div>
+                <div class="text-white/40 text-sm">Aumento médio de alcance orgânico</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇO 2 — TRÁFEGO PAGO -->
+    <section class="py-20 lg:py-28" style="background:#050505">
+      <div class="max-w-7xl mx-auto px-5 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div class="fade-up">
+            <div class="bg-white/[0.03] border border-white/[0.06] rounded-3xl aspect-square flex items-center justify-center">
+              <div class="text-center p-10">
+                <div class="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6" style="background:rgba(226,16,35,0.12)">
+                  <svg class="w-10 h-10 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                </div>
+                <div class="text-white text-3xl font-bold mb-2">3.8×</div>
+                <div class="text-white/40 text-sm">ROAS médio das campanhas</div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="fade-up inline-flex items-center gap-2 tag-red px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase mb-5">
+              Tráfego Pago
+            </div>
+            <h2 class="fade-up delay-1 text-white leading-tight mb-5" style="font-size:clamp(1.75rem, 3vw, 2.5rem)">
+              Não adianta ter presença<br>se o cliente certo não te acha.
+            </h2>
+            <p class="fade-up delay-2 text-white/60 leading-relaxed mb-6">
+              Tráfego pago bem feito não é sobre gastar mais. É sobre atrair as pessoas certas, no momento certo, com a mensagem certa.
+            </p>
+            <p class="fade-up delay-2 text-white/60 leading-relaxed mb-8">
+              A Rebird gerencia campanhas no Google e no Meta com foco em resultado concreto: leads qualificados, agendamentos, vendas — não apenas cliques.
+            </p>
+            <div class="fade-up delay-3 mb-8">
+              <h4 class="text-white/40 text-xs tracking-widest uppercase mb-4">O que entregamos</h4>
+              <ul class="space-y-2.5">
+                <li class="deliverable-item text-white/60 text-sm">Estratégia de campanhas por plataforma</li>
+                <li class="deliverable-item text-white/60 text-sm">Criação e gestão de anúncios (Google Ads e Meta Ads)</li>
+                <li class="deliverable-item text-white/60 text-sm">Segmentação, criativos e testes A/B</li>
+                <li class="deliverable-item text-white/60 text-sm">Relatório mensal com métricas que importam</li>
+              </ul>
+            </div>
+            <div class="fade-up delay-3 bg-white/[0.04] rounded-xl px-5 py-4 border-l-4 border-red-500 mb-8">
+              <p class="text-sm text-white/60"><strong class="text-white">Para quem é:</strong> Empresas que querem gerar demanda ativa — não depender só de indicação ou movimento orgânico.</p>
+            </div>
+            <a href="contato.html" class="fade-up delay-4 glow-btn inline-block px-7 py-3.5 rounded-xl text-sm font-medium">
+              Quero esse serviço →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇO 3 — BRANDING -->
+    <section class="py-20 lg:py-28" style="background:#000">
+      <div class="max-w-7xl mx-auto px-5 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div>
+            <div class="fade-up inline-flex items-center gap-2 tag-red px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase mb-5">
+              Identidade & Branding
+            </div>
+            <h2 class="fade-up delay-1 text-white leading-tight mb-5" style="font-size:clamp(1.75rem, 3vw, 2.5rem)">
+              Sua marca precisa ser reconhecida<br>antes de ser lembrada.
+            </h2>
+            <p class="fade-up delay-2 text-white/60 leading-relaxed mb-6">
+              Identidade de marca não é só logo e cor. É o conjunto de decisões visuais e de linguagem que faz sua empresa ser percebida do jeito certo — antes, durante e depois da compra.
+            </p>
+            <p class="fade-up delay-2 text-white/60 leading-relaxed mb-8">
+              Quando sua identidade é forte, o cliente já chega com mais confiança. Quando é fraca ou inconsistente, você compete só por preço.
+            </p>
+            <div class="fade-up delay-3 mb-8">
+              <h4 class="text-white/40 text-xs tracking-widest uppercase mb-4">O que entregamos</h4>
+              <ul class="space-y-2.5">
+                <li class="deliverable-item text-white/60 text-sm">Diagnóstico de marca atual</li>
+                <li class="deliverable-item text-white/60 text-sm">Definição de posicionamento e tom de voz</li>
+                <li class="deliverable-item text-white/60 text-sm">Identidade visual (logo, paleta, tipografia, aplicações)</li>
+                <li class="deliverable-item text-white/60 text-sm">Manual de marca para uso interno e fornecedores</li>
+              </ul>
+            </div>
+            <div class="fade-up delay-3 bg-white/[0.04] rounded-xl px-5 py-4 border-l-4 border-red-500 mb-8">
+              <p class="text-sm text-white/60"><strong class="text-white">Para quem é:</strong> Empresas que estão crescendo e percebem que a imagem não acompanha mais o tamanho do negócio.</p>
+            </div>
+            <a href="contato.html" class="fade-up delay-4 glow-btn inline-block px-7 py-3.5 rounded-xl text-sm font-medium">
+              Quero esse serviço →
+            </a>
+          </div>
+          <div class="fade-up delay-2">
+            <div class="bg-white/[0.03] border border-white/[0.06] rounded-3xl aspect-square flex items-center justify-center">
+              <div class="text-center p-10">
+                <div class="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6" style="background:rgba(226,16,35,0.12)">
+                  <svg class="w-10 h-10 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4V5z"/></svg>
+                </div>
+                <div class="text-white text-3xl font-bold mb-2">Identidade</div>
+                <div class="text-white/40 text-sm">que o mercado reconhece</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇO 4 — CONTEÚDO -->
+    <section class="py-20 lg:py-28" style="background:#050505">
+      <div class="max-w-7xl mx-auto px-5 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div class="fade-up">
+            <div class="bg-white/[0.03] border border-white/[0.06] rounded-3xl aspect-square flex items-center justify-center">
+              <div class="text-center p-10">
+                <div class="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6" style="background:rgba(226,16,35,0.12)">
+                  <svg class="w-10 h-10 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.069A1 1 0 0121 8.82v6.36a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                </div>
+                <div class="text-white text-3xl font-bold mb-2">Conteúdo</div>
+                <div class="text-white/40 text-sm">com propósito e resultado</div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="fade-up inline-flex items-center gap-2 tag-red px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase mb-5">
+              Criação de Conteúdo
+            </div>
+            <h2 class="fade-up delay-1 text-white leading-tight mb-5" style="font-size:clamp(1.75rem, 3vw, 2.5rem)">
+              Conteúdo que comunica valor.<br>Não só volume.
+            </h2>
+            <p class="fade-up delay-2 text-white/60 leading-relaxed mb-6">
+              O mercado está cheio de conteúdo. O que falta é conteúdo que diz algo de verdade — que mostra por que sua empresa é diferente e por que o cliente deve te escolher.
+            </p>
+            <p class="fade-up delay-2 text-white/60 leading-relaxed mb-8">
+              A Rebird produz conteúdo com propósito: foto, vídeo, texto e criativo alinhados à estratégia da sua marca.
+            </p>
+            <div class="fade-up delay-3 mb-8">
+              <h4 class="text-white/40 text-xs tracking-widest uppercase mb-4">O que entregamos</h4>
+              <ul class="space-y-2.5">
+                <li class="deliverable-item text-white/60 text-sm">Produção fotográfica e de vídeo</li>
+                <li class="deliverable-item text-white/60 text-sm">Criação de criativos para anúncios e redes</li>
+                <li class="deliverable-item text-white/60 text-sm">Redação de textos para site, redes e campanhas</li>
+                <li class="deliverable-item text-white/60 text-sm">Reels, vídeos curtos e conteúdo para Stories</li>
+              </ul>
+            </div>
+            <div class="fade-up delay-3 bg-white/[0.04] rounded-xl px-5 py-4 border-l-4 border-red-500 mb-8">
+              <p class="text-sm text-white/60"><strong class="text-white">Para quem é:</strong> Empresas que precisam de conteúdo de qualidade sem montar uma equipe criativa interna.</p>
+            </div>
+            <a href="contato.html" class="fade-up delay-4 glow-btn inline-block px-7 py-3.5 rounded-xl text-sm font-medium">
+              Quero esse serviço →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇO 5 — SITE -->
+    <section class="py-20 lg:py-28" style="background:#000">
+      <div class="max-w-7xl mx-auto px-5 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div>
+            <div class="fade-up inline-flex items-center gap-2 tag-red px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase mb-5">
+              Site & Landing Pages
+            </div>
+            <h2 class="fade-up delay-1 text-white leading-tight mb-5" style="font-size:clamp(1.75rem, 3vw, 2.5rem)">
+              Seu site precisa vender.<br>Não só existir.
+            </h2>
+            <p class="fade-up delay-2 text-white/60 leading-relaxed mb-6">
+              A maioria dos sites de empresa local faz uma coisa: existir. Tem o endereço, o telefone, alguns serviços.
+            </p>
+            <p class="fade-up delay-2 text-white/60 leading-relaxed mb-8">
+              A Rebird cria sites e landing pages construídos para converter — com copy estratégica, estrutura pensada no usuário e foco no próximo passo que você quer que o visitante dê.
+            </p>
+            <div class="fade-up delay-3 mb-8">
+              <h4 class="text-white/40 text-xs tracking-widest uppercase mb-4">O que entregamos</h4>
+              <ul class="space-y-2.5">
+                <li class="deliverable-item text-white/60 text-sm">Site institucional completo</li>
+                <li class="deliverable-item text-white/60 text-sm">Landing pages para campanhas específicas</li>
+                <li class="deliverable-item text-white/60 text-sm">Copy e estrutura orientada à conversão</li>
+                <li class="deliverable-item text-white/60 text-sm">Integração com WhatsApp, formulários e ferramentas</li>
+              </ul>
+            </div>
+            <div class="fade-up delay-3 bg-white/[0.04] rounded-xl px-5 py-4 border-l-4 border-red-500 mb-8">
+              <p class="text-sm text-white/60"><strong class="text-white">Para quem é:</strong> Empresas que querem que o site trabalhe por elas — gerando contato, orçamento e venda.</p>
+            </div>
+            <a href="contato.html" class="fade-up delay-4 glow-btn inline-block px-7 py-3.5 rounded-xl text-sm font-medium">
+              Quero esse serviço →
+            </a>
+          </div>
+          <div class="fade-up delay-2">
+            <div class="bg-white/[0.03] border border-white/[0.06] rounded-3xl aspect-square flex items-center justify-center">
+              <div class="text-center p-10">
+                <div class="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6" style="background:rgba(226,16,35,0.12)">
+                  <svg class="w-10 h-10 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                </div>
+                <div class="text-white text-3xl font-bold mb-2">Converte</div>
+                <div class="text-white/40 text-sm">enquanto você dorme</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇO 6 — CONSULTORIA -->
+    <section class="py-20 lg:py-28" style="background:#050505">
+      <div class="max-w-7xl mx-auto px-5 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div class="fade-up">
+            <div class="bg-white/[0.03] border border-white/[0.06] rounded-3xl aspect-square flex items-center justify-center">
+              <div class="text-center p-10">
+                <div class="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6" style="background:rgba(226,16,35,0.12)">
+                  <svg class="w-10 h-10 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                </div>
+                <div class="text-white text-3xl font-bold mb-2">Estratégia</div>
+                <div class="text-white/40 text-sm">antes de executar</div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="fade-up inline-flex items-center gap-2 tag-red px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase mb-5">
+              Estratégia & Consultoria
+            </div>
+            <h2 class="fade-up delay-1 text-white leading-tight mb-5" style="font-size:clamp(1.75rem, 3vw, 2.5rem)">
+              Antes de executar,<br>é preciso saber para onde ir.
+            </h2>
+            <p class="fade-up delay-2 text-white/60 leading-relaxed mb-6">
+              Muitas empresas investem em marketing sem ter clareza do posicionamento, do público, dos canais prioritários ou de como medir resultado.
+            </p>
+            <p class="fade-up delay-2 text-white/60 leading-relaxed mb-8">
+              A consultoria da Rebird é para quem quer estruturar um marketing que faça sentido para o negócio — com planejamento real, não achismo.
+            </p>
+            <div class="fade-up delay-3 mb-8">
+              <h4 class="text-white/40 text-xs tracking-widest uppercase mb-4">O que entregamos</h4>
+              <ul class="space-y-2.5">
+                <li class="deliverable-item text-white/60 text-sm">Diagnóstico completo de marketing atual</li>
+                <li class="deliverable-item text-white/60 text-sm">Definição de posicionamento e público-alvo</li>
+                <li class="deliverable-item text-white/60 text-sm">Plano de marketing com canais, prioridades e metas</li>
+                <li class="deliverable-item text-white/60 text-sm">Acompanhamento mensal de estratégia</li>
+              </ul>
+            </div>
+            <div class="fade-up delay-3 bg-white/[0.04] rounded-xl px-5 py-4 border-l-4 border-red-500 mb-8">
+              <p class="text-sm text-white/60"><strong class="text-white">Para quem é:</strong> Empresas que estão crescendo e precisam de clareza sobre para onde o marketing deve ir.</p>
+            </div>
+            <a href="contato.html" class="fade-up delay-4 glow-btn inline-block px-7 py-3.5 rounded-xl text-sm font-medium">
+              Quero esse serviço →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="py-24 lg:py-32 relative overflow-hidden" style="background:#000">
+      <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse at 50% 50%,rgba(226,16,35,0.18) 0%,transparent 70%)"></div>
+      <div class="absolute inset-0 grid-bg opacity-60 pointer-events-none"></div>
+      <div class="relative max-w-3xl mx-auto px-5 lg:px-8 text-center">
+        <h2 class="fade-up text-white leading-tight mb-6" style="font-size:clamp(2rem,4vw,3rem)">Não sabe por onde começar?</h2>
+        <p class="fade-up delay-1 text-white/50 text-lg leading-relaxed mb-10 max-w-lg mx-auto">
+          A gente faz um diagnóstico gratuito da sua situação atual e indica quais frentes fazem mais sentido pro seu negócio agora.
+        </p>
+        <a href="contato.html" class="fade-up delay-2 glow-btn inline-block px-10 py-5 rounded-xl text-lg font-medium">Quero meu diagnóstico gratuito →</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer style="background:#000;border-top:1px solid rgba(226,16,35,0.12)" class="pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/[0.06]">
+        <div class="lg:col-span-2">
+          <div class="mb-4"><img src="logos/rebird-logo.png" alt="Rebird Marketing Digital" style="height:52px;width:auto;object-fit:contain;"></div>
+          <p class="text-white/30 text-sm leading-relaxed max-w-xs mb-6">Presença. Reputação. Resultado.<br>Marketing full service para empresas locais que querem crescer de verdade.</p>
+          <div class="flex gap-3">
+            <a href="https://www.instagram.com/rebirdmarketing/" target="_blank" rel="noopener" aria-label="Instagram" class="w-9 h-9 rounded-lg bg-white/[0.04] hover:bg-red-500/20 flex items-center justify-center text-white/30 hover:text-red-500 transition-all border border-white/[0.06]">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-white text-sm font-medium mb-5 tracking-wide">Navegação</h4>
+          <ul class="space-y-3">
+            <li><a href="como-trabalhamos.html" class="text-white/30 hover:text-red-500 text-sm transition-colors">Como Trabalhamos</a></li>
+            <li><a href="servicos.html" class="text-white/30 hover:text-red-500 text-sm transition-colors">Serviços</a></li>
+            <li><a href="index.html#resultados" class="text-white/30 hover:text-red-500 text-sm transition-colors">Resultados</a></li>
+            <li><a href="contato.html" class="text-white/30 hover:text-red-500 text-sm transition-colors">Contato</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white text-sm font-medium mb-5 tracking-wide">Contato</h4>
+          <ul class="space-y-3">
+            <li><a href="mailto:contatorebird@gmail.com" class="text-white/30 hover:text-red-500 text-sm transition-colors">contatorebird@gmail.com</a></li>
+            <li><a href="https://wa.me/5528999001353" class="text-white/30 hover:text-red-500 text-sm transition-colors">(28) 99900-1353</a></li>
+            <li><span class="text-white/30 text-sm">Cachoeiro de Itapemirim, ES</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p class="text-white/15 text-xs">© 2026 Rebird Marketing Digital. Todos os direitos reservados.</p>
+        <p class="text-white/15 text-xs">CNPJ: 52.734.060/0001-31</p>
+      </div>
+    </div>
+  </footer>
+
+  <a id="whatsapp-btn" href="https://wa.me/5528999001353?text=Olá! Vim pelo site da Rebird e quero conhecer o diagnóstico gratuito." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"
+    class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-lg"
+    style="background:#25D366;box-shadow:0 6px 20px rgba(37,211,102,0.40)">
+    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 60); });
+    document.getElementById('menu-btn').addEventListener('click', () => { document.getElementById('mobile-menu').classList.add('open'); document.getElementById('menu-overlay').classList.remove('hidden'); });
+    document.getElementById('close-menu').addEventListener('click', () => { document.getElementById('mobile-menu').classList.remove('open'); document.getElementById('menu-overlay').classList.add('hidden'); });
+    document.getElementById('menu-overlay').addEventListener('click', () => { document.getElementById('mobile-menu').classList.remove('open'); document.getElementById('menu-overlay').classList.add('hidden'); });
+    const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

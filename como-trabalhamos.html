@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Como Trabalhamos | Rebird Marketing Digital</title>
+  <meta name="description" content="Entenda o método Rebird: diagnóstico, estratégia, execução e evolução contínua.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { 700: '#a50c18', 600: '#c4101f', 500: '#e21023', 400: '#e8394a', 100: '#fde8ea' },
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    @font-face { font-family: 'Universo'; src: url('fonts/Universo-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Universo'; src: url('fonts/Universo-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Universo'; src: url('fonts/Universo-Black.woff2') format('woff2'); font-weight: 900; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Archia'; src: url('fonts/Archia-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Archia'; src: url('fonts/Archia-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Archia'; src: url('fonts/Archia-SemiBold.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'ForrestGallery'; src: url('fonts/ForrestGallery-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Archia', 'Inter', sans-serif; background: #000; color: #fff; overflow-x: hidden; }
+    h1, h2, h3, h4, h5 { font-family: 'Universo', 'Sora', sans-serif; }
+
+    .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.65s cubic-bezier(0.16,1,0.3,1), transform 0.65s cubic-bezier(0.16,1,0.3,1); }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: 0.10s; }
+    .delay-2 { transition-delay: 0.20s; }
+    .delay-3 { transition-delay: 0.30s; }
+    .delay-4 { transition-delay: 0.40s; }
+
+    #navbar { transition: background 0.3s, box-shadow 0.3s; }
+    #navbar.scrolled { background: rgba(0,0,0,0.97) !important; backdrop-filter: blur(14px); box-shadow: 0 1px 12px rgba(0,0,0,0.40); border-bottom: 1px solid rgba(255,255,255,0.06); }
+
+    #mobile-menu { transform: translateX(100%); transition: transform 0.3s ease; }
+    #mobile-menu.open { transform: translateX(0); }
+
+    .glow-btn { background: #e21023; color: #fff; transition: background 0.2s, transform 0.2s, box-shadow 0.2s; box-shadow: 0 6px 20px rgba(226,16,35,0.35); }
+    .glow-btn:hover { background: #e8394a; transform: translateY(-2px); box-shadow: 0 10px 28px rgba(226,16,35,0.50); }
+
+    .tag-red { background: rgba(226,16,35,0.12); color: #e21023; border: 1px solid rgba(226,16,35,0.30); }
+
+    /* Timeline */
+    .timeline-line { position: absolute; left: 28px; top: 60px; bottom: 0; width: 2px; background: linear-gradient(to bottom, #e21023, rgba(226,16,35,0.08)); }
+    .timeline-dot { position: absolute; left: 18px; top: 10px; width: 20px; height: 20px; border-radius: 50%; background: #e21023; box-shadow: 0 0 0 4px rgba(226,16,35,0.18), 0 0 16px rgba(226,16,35,0.35); z-index: 1; }
+
+    .diff-card { transition: transform 0.25s, box-shadow 0.25s; }
+    .diff-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(226,16,35,0.10); }
+
+    .grid-bg { background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 48px 48px; }
+
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-thumb { background: #e21023; border-radius: 3px; }
+    #whatsapp-btn { transition: transform 0.2s; }
+    #whatsapp-btn:hover { transform: scale(1.08); }
+
+    .nav-logo-img { height: 36px; width: auto; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50" style="background:rgba(0,0,0,0.80); backdrop-filter:blur(12px); border-bottom:1px solid rgba(255,255,255,0.06);">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+      <div class="flex items-center justify-between" style="height:72px">
+        <a href="index.html" class="flex items-center">
+          <img src="logos/rebird-logo.png" alt="Rebird Marketing Digital" class="nav-logo-img">
+        </a>
+        <div class="hidden lg:flex items-center gap-8">
+          <a href="como-trabalhamos.html" class="text-white text-sm font-medium border-b-2 border-red-500 pb-0.5" style="border-color:#e21023">Como Trabalhamos</a>
+          <a href="servicos.html" class="text-white/70 hover:text-white text-sm font-medium transition-colors">Serviços</a>
+          <a href="index.html#resultados" class="text-white/70 hover:text-white text-sm font-medium transition-colors">Resultados</a>
+          <a href="contato.html" class="glow-btn px-5 py-2.5 rounded-lg text-sm font-semibold">Diagnóstico Gratuito</a>
+        </div>
+        <button id="menu-btn" class="lg:hidden flex flex-col gap-1.5 p-2"><span class="block w-6 h-0.5 bg-white"></span><span class="block w-6 h-0.5 bg-white"></span><span class="block w-5 h-0.5 bg-white"></span></button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="fixed top-0 right-0 bottom-0 w-72 z-50 shadow-2xl flex flex-col p-8" style="background:#0a0a0a; border-left:1px solid rgba(255,255,255,0.07);">
+      <div class="flex justify-between items-center mb-10">
+        <img src="logos/rebird-logo.png" alt="Rebird" style="height:30px; width:auto;">
+        <button id="close-menu" class="text-white/60 hover:text-white"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
+      </div>
+      <nav class="flex flex-col gap-6">
+        <a href="como-trabalhamos.html" class="text-white font-medium text-lg">Como Trabalhamos</a>
+        <a href="servicos.html" class="text-white/70 font-medium text-lg hover:text-white transition-colors">Serviços</a>
+        <a href="index.html#resultados" class="text-white/70 font-medium text-lg hover:text-white transition-colors">Resultados</a>
+      </nav>
+      <div class="mt-auto"><a href="contato.html" class="glow-btn block text-center px-6 py-3.5 rounded-xl font-bold text-base">Diagnóstico Gratuito</a></div>
+    </div>
+    <div id="menu-overlay" class="hidden fixed inset-0 bg-black/50 z-40"></div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="pt-28 pb-16 relative" style="background:#000;">
+    <div class="absolute inset-0 grid-bg pointer-events-none"></div>
+    <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(226,16,35,0.10) 0%, transparent 70%);"></div>
+    <div class="relative max-w-7xl mx-auto px-5 lg:px-8 text-center">
+      <div class="fade-up inline-flex items-center gap-2 tag-red px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-6">Nosso método</div>
+      <h1 class="fade-up delay-1 font-black text-white leading-tight mb-4" style="font-size:clamp(2.2rem, 5vw, 3.5rem)">
+        Método. Consistência. Resultado.
+      </h1>
+      <p class="fade-up delay-2 text-white/55 text-lg max-w-xl mx-auto">
+        Aqui você entende exatamente como a Rebird trabalha — do primeiro contato até o crescimento de longo prazo.
+      </p>
+    </div>
+  </section>
+
+  <main>
+
+    <!-- FILOSOFIA -->
+    <section class="py-24 lg:py-32" style="background:#050505;">
+      <div class="max-w-7xl mx-auto px-5 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <div class="fade-up inline-flex items-center gap-2 tag-red px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-6">
+              Nossa filosofia
+            </div>
+            <h2 class="fade-up delay-1 font-black text-white leading-tight mb-6" style="font-size:clamp(1.75rem, 3.5vw, 2.5rem)">
+              A gente não vende pacote.<br>A gente constrói parceria.
+            </h2>
+            <div class="fade-up delay-2 space-y-4 text-white/60 leading-relaxed">
+              <p>A maioria das agências tem um pacote básico, um intermediário e um avançado. Você escolhe o que cabe no bolso e eles entregam o que prometeram no contrato.</p>
+              <p>A Rebird funciona diferente.</p>
+              <p>Começamos entendendo o seu negócio de verdade: onde você está, onde quer chegar e o que está no caminho. Só depois disso a gente monta o que faz sentido — não antes.</p>
+              <p>Porque marketing que não é construído sobre estratégia é dinheiro que vira conteúdo sem resultado.</p>
+            </div>
+          </div>
+
+          <!-- Pull quote -->
+          <div class="fade-up delay-2">
+            <div class="rounded-3xl p-10 lg:p-12" style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); border-left:4px solid #e21023;">
+              <svg class="w-10 h-10 mb-6 opacity-30" fill="#e21023" viewBox="0 0 32 32"><path d="M10 8C6.686 8 4 10.686 4 14s2.686 6 6 6c.796 0 1.557-.151 2.255-.424C11.342 21.21 10 23.451 10 26h4c0-3.866 2.686-7.071 6-8V14c0-3.314-2.686-6-6-6h-4zm14 0c-3.314 0-6 2.686-6 6s2.686 6 6 6c.796 0 1.557-.151 2.255-.424C25.342 21.21 24 23.451 24 26h4c0-3.866 2.686-7.071 6-8V14c0-3.314-2.686-6-6-6h-4z"/></svg>
+              <p class="font-black leading-tight text-white mb-4" style="font-size:clamp(1.5rem, 3vw, 2rem)">
+                Marketing sem estratégia é dinheiro que vira conteúdo <span style="color:#e21023">sem resultado.</span>
+              </p>
+              <p class="text-white/35 text-sm">— Filosofia Rebird</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AS 4 FASES -->
+    <section class="py-24 lg:py-32" style="background:#000;">
+      <div class="max-w-7xl mx-auto px-5 lg:px-8">
+        <div class="text-center mb-16">
+          <div class="fade-up inline-flex items-center gap-2 tag-red px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-6">
+            As 4 fases
+          </div>
+          <h2 class="fade-up delay-1 font-black text-white leading-tight mb-4" style="font-size:clamp(2rem, 4vw, 3rem)">
+            Como funciona na prática
+          </h2>
+        </div>
+
+        <!-- Timeline -->
+        <div class="max-w-4xl mx-auto space-y-0">
+
+          <!-- Fase 1 -->
+          <div class="fade-up relative pl-16 pb-12">
+            <div class="timeline-line"></div>
+            <div class="timeline-dot"></div>
+            <div class="rounded-2xl p-8" style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07);">
+              <div class="flex flex-wrap items-start justify-between gap-4 mb-5">
+                <div>
+                  <div class="text-xs font-bold tracking-widest uppercase mb-1" style="color:#e21023">Fase 01 — Semana 1</div>
+                  <h3 class="font-black text-white text-2xl">Diagnóstico Inicial</h3>
+                </div>
+                <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(226,16,35,0.12);">
+                  <svg class="w-6 h-6" fill="none" stroke="#e21023" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                </div>
+              </div>
+              <p class="text-white/55 leading-relaxed mb-6">Tudo começa com uma conversa honesta. Entendemos sua empresa, seu mercado, seus concorrentes, seu cliente ideal e o que o seu marketing atual está — ou não está — fazendo.</p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="flex items-start gap-2"><span class="font-bold text-sm mt-0.5" style="color:#e21023">→</span><span class="text-white/50 text-sm">Mapeamento do posicionamento atual</span></div>
+                <div class="flex items-start gap-2"><span class="font-bold text-sm mt-0.5" style="color:#e21023">→</span><span class="text-white/50 text-sm">Análise dos canais ativos</span></div>
+                <div class="flex items-start gap-2"><span class="font-bold text-sm mt-0.5" style="color:#e21023">→</span><span class="text-white/50 text-sm">Identificação das principais lacunas</span></div>
+                <div class="flex items-start gap-2"><span class="font-bold text-sm mt-0.5" style="color:#e21023">→</span><span class="text-white/50 text-sm">Prioridades para os próximos 90 dias</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fase 2 -->
+          <div class="fade-up delay-1 relative pl-16 pb-12">
+            <div class="timeline-dot"></div>
+            <div class="rounded-2xl p-8" style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07);">
+              <div class="flex flex-wrap items-start justify-between gap-4 mb-5">
+                <div>
+                  <div class="text-xs font-bold tracking-widest uppercase mb-1" style="color:#e21023">Fase 02 — Semanas 2 e 3</div>
+                  <h3 class="font-black text-white text-2xl">Estratégia e Planejamento</h3>
+                </div>
+                <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(226,16,35,0.12);">
+                  <svg class="w-6 h-6" fill="none" stroke="#e21023" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                </div>
+              </div>
+              <p class="text-white/55 leading-relaxed mb-6">Com o diagnóstico em mãos, montamos o plano. Quais canais ativar, qual mensagem usar, como posicionar sua marca e quais métricas acompanhar.</p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="flex items-start gap-2"><span class="font-bold text-sm mt-0.5" style="color:#e21023">→</span><span class="text-white/50 text-sm">Plano de marketing personalizado</span></div>
+                <div class="flex items-start gap-2"><span class="font-bold text-sm mt-0.5" style="color:#e21023">→</span><span class="text-white/50 text-sm">Posicionamento e tom de voz definidos</span></div>
+                <div class="flex items-start gap-2"><span class="font-bold text-sm mt-0.5" style="color:#e21023">→</span><span class="text-white/50 text-sm">Calendário de conteúdo e campanhas</span></div>
+                <div class="flex items-start gap-2"><span class="font-bold text-sm mt-0.5" style="color:#e21023">→</span><span class="text-white/50 text-sm">Metas e indicadores por frente</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fase 3 -->
+          <div class="fade-up delay-2 relative pl-16 pb-12">
+            <div class="timeline-dot"></div>
+            <div class="rounded-2xl p-8" style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07);">
+              <div class="flex flex-wrap items-start justify-between gap-4 mb-5">
+                <div>
+                  <div class="text-xs font-bold tracking-widest uppercase mb-1" style="color:#e21023">Fase 03 — A partir da semana 4</div>
+                  <h3 class="font-black text-white text-2xl">Execução</h3>
+                </div>
+                <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(226,16,35,0.12);">
+                  <svg class="w-6 h-6" fill="none" stroke="#e21023" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                </div>
+              </div>
+              <p class="text-white/55 leading-relaxed mb-6">Com a estratégia aprovada, a equipe entra em campo. Cada frente executada com consistência, qualidade criativa e atenção ao detalhe que reflete o nível da sua marca.</p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="flex items-start gap-2"><span class="font-bold text-sm mt-0.5" style="color:#e21023">→</span><span class="text-white/50 text-sm">Conteúdo, campanhas e ações conforme planejado</span></div>
+                <div class="flex items-start gap-2"><span class="font-bold text-sm mt-0.5" style="color:#e21023">→</span><span class="text-white/50 text-sm">Comunicação ativa e transparente</span></div>
+                <div class="flex items-start gap-2"><span class="font-bold text-sm mt-0.5" style="color:#e21023">→</span><span class="text-white/50 text-sm">Entrega sem surpresas</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fase 4 — destaque vermelho -->
+          <div class="fade-up delay-3 relative pl-16">
+            <div class="timeline-dot"></div>
+            <div class="rounded-2xl p-8" style="background:rgba(226,16,35,0.07); border:1px solid rgba(226,16,35,0.25);">
+              <div class="flex flex-wrap items-start justify-between gap-4 mb-5">
+                <div>
+                  <div class="text-xs font-bold tracking-widest uppercase mb-1" style="color:#e21023">Fase 04 — Mensal, recorrente</div>
+                  <h3 class="font-black text-white text-2xl">Análise e Evolução</h3>
+                </div>
+                <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(226,16,35,0.18);">
+                  <svg class="w-6 h-6" fill="none" stroke="#e21023" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                </div>
+              </div>
+              <p class="text-white/70 leading-relaxed mb-6">Todo mês, revisamos o que foi feito, analisamos os números e ajustamos o que precisa. O marketing da Rebird melhora mês a mês — porque aprendemos com os dados, não com achismo.</p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="flex items-start gap-2"><span class="font-bold text-sm mt-0.5" style="color:#e21023">→</span><span class="text-white/60 text-sm">Relatório mensal com métricas relevantes</span></div>
+                <div class="flex items-start gap-2"><span class="font-bold text-sm mt-0.5" style="color:#e21023">→</span><span class="text-white/60 text-sm">Reunião de alinhamento e próximos passos</span></div>
+                <div class="flex items-start gap-2"><span class="font-bold text-sm mt-0.5" style="color:#e21023">→</span><span class="text-white/60 text-sm">Ajustes de estratégia baseados em resultado</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIFERENCIAIS DE PROCESSO -->
+    <section class="py-24 lg:py-32" style="background:#050505;">
+      <div class="max-w-7xl mx-auto px-5 lg:px-8">
+        <div class="text-center mb-16">
+          <div class="fade-up inline-flex items-center gap-2 tag-red px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-6">
+            O que você pode esperar
+          </div>
+          <h2 class="fade-up delay-1 font-black text-white leading-tight mb-4" style="font-size:clamp(2rem, 4vw, 3rem)">
+            O que você pode esperar<br>trabalhando com a Rebird
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="diff-card fade-up delay-1 rounded-2xl p-8" style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-left:4px solid #e21023;">
+            <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-5" style="background:rgba(226,16,35,0.12);">
+              <svg class="w-5 h-5" fill="none" stroke="#e21023" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+            </div>
+            <h3 class="font-black text-white text-lg mb-3">Transparência total</h3>
+            <p class="text-white/55 leading-relaxed text-sm">Você sabe o que está sendo feito, por quê e o que esperar de resultado. Sem caixa preta, sem surpresas no relatório.</p>
+          </div>
+
+          <div class="diff-card fade-up delay-2 rounded-2xl p-8" style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-left:4px solid #e21023;">
+            <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-5" style="background:rgba(226,16,35,0.12);">
+              <svg class="w-5 h-5" fill="none" stroke="#e21023" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+            </div>
+            <h3 class="font-black text-white text-lg mb-3">Comunicação que funciona</h3>
+            <p class="text-white/55 leading-relaxed text-sm">Retorno rápido, canal direto com a equipe e alinhamento frequente. Nada fica perdido nem sem resposta.</p>
+          </div>
+
+          <div class="diff-card fade-up delay-3 rounded-2xl p-8" style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-left:4px solid #e21023;">
+            <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-5" style="background:rgba(226,16,35,0.12);">
+              <svg class="w-5 h-5" fill="none" stroke="#e21023" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+            </div>
+            <h3 class="font-black text-white text-lg mb-3">Estratégia antes de execução</h3>
+            <p class="text-white/55 leading-relaxed text-sm">Antes de qualquer post ou campanha, existe um plano. Não improvisamos nem seguimos o que está "na moda".</p>
+          </div>
+
+          <div class="diff-card fade-up delay-4 rounded-2xl p-8" style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-left:4px solid #e21023;">
+            <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-5" style="background:rgba(226,16,35,0.12);">
+              <svg class="w-5 h-5" fill="none" stroke="#e21023" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+            </div>
+            <h3 class="font-black text-white text-lg mb-3">Foco no seu negócio</h3>
+            <p class="text-white/55 leading-relaxed text-sm">Não somos uma fábrica de conteúdo. Somos parceiros de crescimento. Tratamos sua empresa como tratamos a nossa.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="py-24 lg:py-28 relative overflow-hidden" style="background:#000;">
+      <div class="absolute inset-0 grid-bg pointer-events-none"></div>
+      <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(226,16,35,0.14) 0%, transparent 70%);"></div>
+      <div class="relative max-w-3xl mx-auto px-5 lg:px-8 text-center">
+        <h2 class="fade-up font-black text-white leading-tight mb-6" style="font-size:clamp(2rem, 4vw, 3rem)">
+          Quer ver como funciona<br>para o seu negócio?
+        </h2>
+        <p class="fade-up delay-1 text-white/60 text-lg leading-relaxed mb-10 max-w-lg mx-auto">
+          Agende uma conversa sem compromisso. Em 30 minutos, você entende se a Rebird faz sentido para onde você quer chegar.
+        </p>
+        <a href="contato.html" class="fade-up delay-2 inline-block glow-btn px-10 py-5 rounded-xl text-lg font-black">
+          Agendar conversa →
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="pt-16 pb-8" style="background:#050505; border-top:1px solid rgba(255,255,255,0.06);">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12" style="border-bottom:1px solid rgba(255,255,255,0.07);">
+        <div class="lg:col-span-2">
+          <div class="mb-4">
+            <img src="logos/rebird-logo.png" alt="Rebird Marketing Digital" style="height:36px; width:auto;">
+          </div>
+          <p class="text-white/35 text-sm leading-relaxed max-w-xs mb-5">Presença. Reputação. Resultado.</p>
+          <div class="flex gap-3">
+            <a href="https://www.instagram.com/rebirdmarketing/" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg flex items-center justify-center transition-colors" style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08);" onmouseover="this.style.background='rgba(226,16,35,0.15)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'">
+              <svg class="w-4 h-4 text-white/60" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-bold text-white text-sm mb-5">Navegação</h4>
+          <ul class="space-y-3">
+            <li><a href="como-trabalhamos.html" class="text-white/70 text-sm hover:text-white transition-colors">Como Trabalhamos</a></li>
+            <li><a href="servicos.html" class="text-white/40 hover:text-white text-sm transition-colors">Serviços</a></li>
+            <li><a href="contato.html" class="text-white/40 hover:text-white text-sm transition-colors">Contato</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-white text-sm mb-5">Contato</h4>
+          <ul class="space-y-3">
+            <li><a href="mailto:contatorebird@gmail.com" class="text-white/40 hover:text-white text-sm transition-colors">contatorebird@gmail.com</a></li>
+            <li><a href="https://wa.me/5528999001353" class="text-white/40 hover:text-white text-sm transition-colors">(28) 99900-1353</a></li>
+            <li><span class="text-white/25 text-sm">Cachoeiro de Itapemirim ES</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+        <p class="text-white/20 text-xs">© 2026 Rebird Marketing Digital. Todos os direitos reservados.</p>
+        <p class="text-white/15 text-xs">CNPJ 52.734.060/0001-31</p>
+      </div>
+    </div>
+  </footer>
+
+  <a id="whatsapp-btn" href="https://wa.me/5528999001353?text=Olá! Vim pelo site da Rebird e quero conhecer o diagnóstico gratuito." target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center" style="background:#25D366; box-shadow: 0 6px 20px rgba(37,211,102,0.40)">
+    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 60); });
+    document.getElementById('menu-btn').addEventListener('click', () => { document.getElementById('mobile-menu').classList.add('open'); document.getElementById('menu-overlay').classList.remove('hidden'); });
+    document.getElementById('close-menu').addEventListener('click', () => { document.getElementById('mobile-menu').classList.remove('open'); document.getElementById('menu-overlay').classList.add('hidden'); });
+    document.getElementById('menu-overlay').addEventListener('click', () => { document.getElementById('mobile-menu').classList.remove('open'); document.getElementById('menu-overlay').classList.add('hidden'); });
+    const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
