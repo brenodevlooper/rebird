@@ -5,9 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rebird | Marketing que constrói presença e reputação</title>
   <meta name="description" content="Agência full service para empresas locais. Posicionamento, presença e reputação — não só curtidas.">
+  <!-- SEO / Indexação (Kit SEO Rebird) — trocar SEU-DOMINIO.com.br pelo domínio real -->
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://SEU-DOMINIO.com.br/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Rebird Marketing Digital">
   <meta property="og:title" content="Rebird | Marketing que constrói presença e reputação">
   <meta property="og:description" content="A Rebird não é uma agência que só faz posts. A gente constrói presença e reputação.">
-  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://SEU-DOMINIO.com.br/">
+  <meta property="og:image" content="https://SEU-DOMINIO.com.br/og-image.png">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rebird | Marketing que constrói presença e reputação">
+  <meta name="twitter:description" content="A Rebird não é uma agência que só faz posts. A gente constrói presença e reputação.">
+  <meta name="twitter:image" content="https://SEU-DOMINIO.com.br/og-image.png">
+
+  <!-- Dados estruturados: negócio local -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Rebird Marketing Digital",
+    "description": "Agência full service para empresas locais. Posicionamento, presença e reputação — não só curtidas.",
+    "url": "https://SEU-DOMINIO.com.br/",
+    "image": "https://SEU-DOMINIO.com.br/og-image.png",
+    "telephone": "+5528999691118",
+    "email": "contatorebird@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Cachoeiro de Itapemirim",
+      "addressRegion": "ES",
+      "addressCountry": "BR"
+    },
+    "areaServed": "Sul do Espírito Santo",
+    "sameAs": [
+      "https://www.instagram.com/rebirdmarketing/"
+    ]
+  }
+  </script>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -32,29 +71,26 @@
 
   <!-- Fontes customizadas — adicione os arquivos em /fonts/ -->
   <style>
+    /* Marca (wordmark) — Bebas Neue (OFL, free p/ comercial). Substitui Forrest Gallery DEMO. */
     @font-face {
-      font-family: 'Forrest Gallery';
-      src: local('Forrest Gallery Regular'), local('ForrestGallery-Regular'),
-           url('fonts/ForrestGallery-Regular.woff2') format('woff2'),
-           url('fonts/ForrestGallery-Regular.woff') format('woff');
+      font-family: 'Bebas Neue';
+      src: url('fonts/BebasNeue-Regular.woff2') format('woff2');
       font-weight: 400;
       font-style: normal;
       font-display: swap;
     }
+    /* Títulos — Space Grotesk variável (OFL). Substitui Universo DEMO. */
     @font-face {
-      font-family: 'Universo';
-      src: local('Universo Regular'), local('Universo-Regular'),
-           url('fonts/Universo-Regular.woff2') format('woff2'),
-           url('fonts/Universo-Regular.woff') format('woff');
-      font-weight: 400;
+      font-family: 'Space Grotesk';
+      src: url('fonts/SpaceGrotesk.woff2') format('woff2');
+      font-weight: 300 700;
       font-style: normal;
       font-display: swap;
     }
+    /* Corpo — Archia (real, licença Atipo). */
     @font-face {
       font-family: 'Archia';
-      src: local('Archia Regular'), local('Archia-Regular'),
-           url('fonts/Archia-Regular.woff2') format('woff2'),
-           url('fonts/Archia-Regular.woff') format('woff');
+      src: url('fonts/Archia-Regular.woff2') format('woff2');
       font-weight: 400;
       font-style: normal;
       font-display: swap;
@@ -71,11 +107,11 @@
     }
 
     h1, h2, h3, h4, h5 {
-      font-family: 'Universo', 'Sora', system-ui, sans-serif;
+      font-family: 'Space Grotesk', 'Sora', system-ui, sans-serif;
     }
 
     .brand-name {
-      font-family: 'Forrest Gallery', 'Sora', system-ui, sans-serif;
+      font-family: 'Bebas Neue', 'Sora', system-ui, sans-serif;
       letter-spacing: 0.08em;
     }
 
@@ -220,7 +256,7 @@
 
     /* ── Stat counter glow ── */
     .stat-value {
-      font-family: 'Universo', 'Sora', system-ui, sans-serif;
+      font-family: 'Space Grotesk', 'Sora', system-ui, sans-serif;
       font-weight: 700;
       font-size: 2.25rem;
       line-height: 1;
@@ -865,7 +901,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           <!-- Step 1 -->
           <div class="fade-up delay-1 glow-card bg-white/[0.02] rounded-2xl p-7 relative overflow-hidden">
-            <div class="text-red-500/10 font-bold absolute top-3 right-4" style="font-size:4.5rem; line-height:1; font-family:'Universo', system-ui">01</div>
+            <div class="text-red-500/10 font-bold absolute top-3 right-4" style="font-size:4.5rem; line-height:1; font-family:'Space Grotesk', system-ui">01</div>
             <div class="relative">
               <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-5" style="background:#e21023; box-shadow: 0 0 16px rgba(226,16,35,0.5)">
                 <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
@@ -878,7 +914,7 @@
 
           <!-- Step 2 -->
           <div class="fade-up delay-2 glow-card bg-white/[0.02] rounded-2xl p-7 relative overflow-hidden">
-            <div class="text-red-500/10 font-bold absolute top-3 right-4" style="font-size:4.5rem; line-height:1; font-family:'Universo', system-ui">02</div>
+            <div class="text-red-500/10 font-bold absolute top-3 right-4" style="font-size:4.5rem; line-height:1; font-family:'Space Grotesk', system-ui">02</div>
             <div class="relative">
               <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-5" style="background:#e21023; box-shadow: 0 0 16px rgba(226,16,35,0.5)">
                 <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
@@ -891,7 +927,7 @@
 
           <!-- Step 3 -->
           <div class="fade-up delay-3 glow-card bg-white/[0.02] rounded-2xl p-7 relative overflow-hidden">
-            <div class="text-red-500/10 font-bold absolute top-3 right-4" style="font-size:4.5rem; line-height:1; font-family:'Universo', system-ui">03</div>
+            <div class="text-red-500/10 font-bold absolute top-3 right-4" style="font-size:4.5rem; line-height:1; font-family:'Space Grotesk', system-ui">03</div>
             <div class="relative">
               <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-5" style="background:#e21023; box-shadow: 0 0 16px rgba(226,16,35,0.5)">
                 <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
@@ -904,7 +940,7 @@
 
           <!-- Step 4 -->
           <div class="fade-up delay-4 glow-card bg-white/[0.02] rounded-2xl p-7 relative overflow-hidden">
-            <div class="text-red-500/10 font-bold absolute top-3 right-4" style="font-size:4.5rem; line-height:1; font-family:'Universo', system-ui">04</div>
+            <div class="text-red-500/10 font-bold absolute top-3 right-4" style="font-size:4.5rem; line-height:1; font-family:'Space Grotesk', system-ui">04</div>
             <div class="relative">
               <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-5" style="background:#e21023; box-shadow: 0 0 16px rgba(226,16,35,0.5)">
                 <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
@@ -1140,7 +1176,7 @@
           <h4 class="text-white text-sm font-medium mb-5 tracking-wide">Contato</h4>
           <ul class="space-y-3">
             <li><a href="mailto:contatorebird@gmail.com" class="text-white/30 hover:text-red-500 text-sm transition-colors">contatorebird@gmail.com</a></li>
-            <li><a href="https://wa.me/5528999001353" class="text-white/30 hover:text-red-500 text-sm transition-colors">(28) 99900-1353</a></li>
+            <li><a href="https://wa.me/5528999691118" class="text-white/30 hover:text-red-500 text-sm transition-colors">(28) 99969-1118</a></li>
             <li><span class="text-white/30 text-sm">Cachoeiro de Itapemirim, ES</span></li>
           </ul>
         </div>
@@ -1154,7 +1190,7 @@
   </footer>
 
   <!-- WhatsApp Button -->
-  <a id="whatsapp-btn" href="https://wa.me/5528999001353?text=Olá! Vim pelo site da Rebird e quero conhecer o diagnóstico gratuito." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"
+  <a id="whatsapp-btn" href="https://wa.me/5528999691118?text=Olá! Vim pelo site da Rebird e quero conhecer o diagnóstico gratuito." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"
     class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-lg"
     style="background:#25D366; box-shadow: 0 6px 20px rgba(37,211,102,0.40)">
     <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
