@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Páginas/arquivos que NÃO devem ser indexados
+Disallow: /brand-identity.html
+Disallow: /criativo-marketing-digital.html
+Disallow: /criativo-presenca-digital.html
+Disallow: /obrigado.html
+Disallow: /obrigado/
+
+Sitemap: https://rebird.com.br/sitemap.xml
